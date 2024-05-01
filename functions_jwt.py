@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from jwt import decode, encode, exceptions
 
 
-def expire_date(seconds: int = 360, kwargs={}):
+def expire_date(seconds: int = 2000000, kwargs={}):
     """Function that creates the ttl offset for the jwt.
 
     Args:
