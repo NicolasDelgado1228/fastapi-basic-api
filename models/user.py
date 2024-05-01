@@ -1,19 +1,17 @@
-from sqlalchemy import Column, Integer, String  # , Table
-from sqlalchemy.ext.declarative import declarative_base
-from config.db import engine, meta
+from sqlalchemy import Column, Integer, String
 
-Base = declarative_base()
+from config.db import Base
 
 
 class users(Base):
     __tablename__ = "users"
 
-    Column("id", Integer, primary_key=True, autoincrement=True)
-    Column("username", String)
-    Column("first_name", String)
-    Column("last_name", String)
-    Column("email", String)
-    Column("password", String)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    email = Column(String)
+    username = Column(String)
+    password = Column(String)
 
 
 # users = Table(
@@ -27,4 +25,4 @@ class users(Base):
 #     Column("password", String(255)),
 # )
 
-meta.create_all(engine)
+# meta.create_all(engine)
